@@ -2,8 +2,6 @@ Surfeitalpha::Application.routes.draw do
 
   get '/' => 'home#index', :as => :index
 
-
-
   get '/sessions/login' => 'sessions#login', :as => :login
   post '/sessions/create' => 'sessions#create'
   get '/sessions/logout' => 'sessions#destroy', :as => :logout

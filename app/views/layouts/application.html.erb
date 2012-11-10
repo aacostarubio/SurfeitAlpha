@@ -11,7 +11,7 @@
   </ul>
   <nav>
     <%= link_to "Home", index_url %> |
-    <%= link_to "Account", user_account_url %> |
+    <%= link_to "Account", index_url %> |
     
     <% if session[:user_id] == nil   # no one is logged in  %>
       <%= link_to "Sign In", login_url %>
