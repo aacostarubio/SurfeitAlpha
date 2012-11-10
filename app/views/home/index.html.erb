@@ -2,8 +2,7 @@
  
  <% if session[:user_id] != nil %>
  <% user = User.find_by_id(session[:user_id]).name %>
-  Welcome <%= user%>!
-  <%= link_to "Sign Out", logout_path %>
+  
 <% else %>
  Don't have an account? <%= link_to "Create an Account", new_user_url%>
  <br>

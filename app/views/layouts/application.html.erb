@@ -7,7 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	 <ul>
+  </ul>
+  <nav>
+    <%= link_to "Home", index_url %> |
+    
+    <% if session[:user_id] == nil   # no one is logged in  %>
+      <%= link_to "Sign In", login_url %>
+    <% else # someone is logged in %>
+      Logged in as <%= User.find_by_id(session[:user_id]).name %>
+      <%= link_to 'Sign Out', logout_path %>
+    <% end %>
+  </nav>
+  <p id="notice"><%= notice %></p>
 <%= yield %>
 
 </body>
