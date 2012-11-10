@@ -15,7 +15,7 @@ end
    		   session[:user_id] = user.id
    		   redirect_to index_url, :notice => "Welcome back, #{user.name}!"
    		 else
-   		   redirect_to login_url, :notice => "Sorry, try again."
+   		   redirect_to fail_url, :notice => "Sorry, try again."
    		 end
 	end
 

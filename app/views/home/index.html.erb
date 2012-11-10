@@ -1,1 +1,13 @@
 <h1>INDEX</h1>
+ 
+ <% if session[:user_id] != nil %>
+ <% user = User.find_by_id(session[:user_id]).name %>
+  Welcome <%= user%>!
+  <%= link_to "Sign Out", logout_path %>
+<% else %>
+ Don't have an account? <%= link_to "Create an Account", login_url%>
+ <br>
+ <br>
+ Are you an <em>awesome</em> Surfeit user? <%= link_to "Sign in", "/sessions/login" %>
+<% end %>
+
