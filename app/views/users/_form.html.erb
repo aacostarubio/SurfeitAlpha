@@ -1,14 +1,37 @@
-<%= form_tag "/sessions/new" do %>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-  <%= label_tag :username, "Username:" %>
-  <%= text_field_tag :username %> <br>
-  <%= label_tag :email, "Email:" %>
-  <%= text_field_tag :email %> <br>
-  <%= label_tag :password, "Password:" %>
-  <%= password_field_tag :password %><br>
-  <%= label_tag :password_confirmation, "Password:" %>
-  <%= password_field_tag :password_confirmation%><br>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <%= submit_tag "Login "%>
-  
-<% end %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %> 
