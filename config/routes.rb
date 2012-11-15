@@ -1,5 +1,7 @@
 Surfeitalpha::Application.routes.draw do
 
+  get "pages/current"
+
   get '/' => 'home#index', :as => :index
 
   get '/sessions/login' => 'sessions#login', :as => :login
@@ -8,9 +10,8 @@ Surfeitalpha::Application.routes.draw do
   get '/sessions/fail' => 'sessions#fail', :as => :fail
 
 
-  resources :users do 
-    resources :accounts
-  end
+  resources :users
+  resources :accounts
 
     # root :to => 'Directors#index'  DO THIS
  
