@@ -11,7 +11,7 @@ Surfeitalpha::Application.routes.draw do
 
 
   resources :users
-  resources :accounts
+  
 
     # root :to => 'Directors#index'  DO THIS
  
