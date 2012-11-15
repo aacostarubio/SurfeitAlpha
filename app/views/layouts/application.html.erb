@@ -16,7 +16,7 @@
       <%= link_to "Sign In", login_url %>
     <% else # someone is logged in %>
       <%= link_to "Account", index_url %> |
-      Logged in as <%= User.find_by_id(session[:user_id]).name %>
+      <%= User.find_by_id(session[:user_id]).name %>
       <%= link_to 'Sign Out', logout_path %>
     <% end %>
   </nav>
@@ -25,3 +25,4 @@
 
 </body>
 </html>
+ 

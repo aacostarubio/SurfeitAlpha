@@ -12,26 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Name:" %>
     <%= f.text_field :name %>
   </div>
     <div class="field">
-    <%= f.label :username %><br />
+    <%= f.label :username, "Username:" %>
     <%= f.text_field :username %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.label :email, "Email:" %>
+    <%= f.email_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password, "Password:" %>
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "Confirm Password:" %>
     <%= f.password_field :password_confirmation %>
   </div>
+  <div class="field">
+    <%= f.label :email_opt_in, "Email Updates:" %>
+    <%= f.check_box :email_opt_in %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Join Us" %>
   </div>
 <% end %> 
